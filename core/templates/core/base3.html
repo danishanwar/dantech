@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dan-Tech</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+
+  <link href="{% static 'core/bootstrap/three/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+<link href="{% static 'core/bootstrap/four/css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+
+
+
+  <style type="text/css">
+    #bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #580c90;color: #fcf">
+        <a class="navbar-brand" href="{% url 'welcome' %}" style="color: #fcf">Dan-Tech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'welcome' %}" style="color: #fcf">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'welcome' %}" style="color: #fcf">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'feed' %}" style="color: #fcf">Feeds</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+
+        
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </li>
+          </ul>
+      
+       <form action="{% url 'search' %}" class="d-flex" method="GET" style="align-content: right;">
+                    <input name="q" class="form-control me-2" type="search" placeholder="FInd A Friend Here" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="color: #580c90; background-color: #fcf;">Search</button>
+                  </form>
+
+                  <ul class="navbar-nav ml-auto ml-md-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%  url 'logout' %}" style="color: #fcf">Logout</a>
+                      </li>
+
+                </ul>
+         
+      
+      
+        </div>
+      </nav>
+
+
+
+<body id="bg">
+
+
+
+
+
+{% block body %}
+{% endblock %}
+
+</body>
+<style>
+#footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 60px;
+   width: 100%;
+   background-color: #580C90;
+   color: #fcf;
+   text-align: center;
+}
+</style>
+
+<div class="fixed-bottom" id="footer">
+
+<div style="padding-top: 15px;font-style:cambria ; font-size: 18px; font-weight: bold;">
+<p>Copyright Dan-Tech © 2022. All Rights Reserved.</p>
+</div>
+</html>
